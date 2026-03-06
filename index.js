@@ -1,47 +1,3 @@
-/*
-let nome = "Gertrudes";
-let idade = "31";
-document.write("Olá, meu nome é " + nome + " e tenho " + idade + " anos.");
-*/
-
-
-/*
-const preco = 100;
-const desconto = 20;
-
-document.writeln("Preço original:" + preco);
-document.writeln("<br>")
-document.writeln("desconto:" + desconto);
-document.writeln("<br>")
-document.writeln("total:" + (preco - desconto));
-*/
-
-
-/*
-let nome = "Mario";
-let nota1 = 8.5;
-let nota2 = 5.5;
-let nota3 = 10.0;
-
-let media = (nota1 + nota2 + nota3) / 3;
-
-if (media > 7) {
-    document.writeln("Resultado para :" + nome);
-    document.writeln("<br>");
-    document.writeln("Mèdia:" + media.toFixed(1));
-    document.writeln("<br>");
-    document.writeln("parabens voce foi aprovado");
-    document.writeln("<br>");
-} else {
-    document.writeln("Resultado para :" + nome);
-    document.writeln("<br>");
-    document.writeln("Mèdia:" + media.toFixed(1));
-    document.writeln("<br>");
-    document.writeln("parabens voce foi reaprovado");
-    document.writeln("<br>");
-}
-*/
-
 function conversorMoeda() {
     let real = document.getElementById("real").value;
 
@@ -124,24 +80,109 @@ function maioridade() {
 
     if (mesAtual < mesNascimento || mesAtual === mesNascimento && atual.getDate() < nascimento.getDate()) {
         idade--;
-        if(idade < 18){
+        if (idade < 18) {
             document.writeln("Você é de menor")
         }
-    }else {
+    } else {
         document.writeln("Você é de maior")
     }
 }
 
 function confirmarSenha() {
 
-    let senhaUSR = document.getElementById("senhaUSR").value;
+    let senhaUSR = Number(document.getElementById("senhaUSR").value);
 
     let senhaCorreta = 1234;
 
 
     if (senhaUSR === senhaCorreta) {
-        document.writeln("Senha incorreta");
+        document.writeln("Senha correta");
     } else {
-        document.writeln("Senha correta")
+        document.writeln("Senha incorreta")
     }
 }
+
+function compararNumeros() {
+
+    let numeroA = Number(document.getElementById("numeroA").value);
+
+    let numeroB = Number(document.getElementById("numeroB").value);
+
+    if (numeroA > numeroB) {
+        document.writeln("Numero A maior")
+    } else if (numeroA < numeroB) {
+        document.writeln("Numero B maior")
+    } else {
+        document.writeln("Numueros iguais")
+    }
+
+}
+
+function desconto() {
+
+    let valorCompra = Number(document.getElementById("valorCompra").value);
+
+    if (valorCompra > 100) {
+        valorCompra = valorCompra * 0.90;
+        document.writeln("Total:R$" + valorCompra);
+    } else {
+        document.writeln("Total:R$" + valorCompra);
+    }
+
+}
+
+function calculaIMC() {
+
+    let peso = Number(document.getElementById("peso").value);
+
+    let altura = Number(document.getElementById("altura").value);
+
+    let imc = peso / (altura * altura);
+
+    if (imc <= 18.5) {
+        document.writeln("IMC:" + imc + " - Magreza")
+    }
+    else if (imc > 18.5 && imc <= 24.9) {
+        document.writeln("IMC:" + imc + " - Saudavel")
+    }
+    else if (imc > 24.9 && imc <= 29.9) {
+        document.writeln("IMC:" + imc + " - Sobrepeso")
+    }
+    else if (imc > 29.9 && imc <= 34.9) {
+        document.writeln("IMC:" + imc + " - Obesidade")
+    }
+    else if (imc > 34.9 && imc <= 39.9) {
+        document.writeln("IMC:" + imc + " - Obesidade severa")
+    }
+    else {
+        document.writeln("IMC:" + imc + " - Obesidade severa")
+    }
+}
+/* case "imc <= 18.5":
+document.writeln("IMC:" + imc + "Magreza")
+break;
+
+ case "imc > 18.5 && imc <= 24.9 ":
+document.writeln("IMC:" + imc + "Saudavel")
+break;
+
+ case "imc > 24.9 && imc <= 29.9 ":
+document.writeln("IMC:" + imc + "Sobrepeso")
+break;
+
+ case "imc > 29.9 && imc <= 34.9 ":
+document.writeln("IMC:" + imc + "Obesidade")
+break;
+
+ case "imc > 34.9 && imc <= 39.9 ":
+document.writeln("IMC:" + imc + "Obesidade severa")
+break;
+
+ case "imc => 40":
+document.writeln("IMC:" + imc + "Obesidade Morbida")
+break;
+
+ default:
+document.writeln("Campos preenchidos de forma incorreta");
+*/
+
