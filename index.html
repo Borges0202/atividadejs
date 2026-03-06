@@ -26,6 +26,8 @@
 
             <input type="button" onclick="conversorMoeda()">Converter</input>
 
+            <p id="resultadoMoeda"></p>
+
         </fieldset>
 
         <fieldset>
@@ -47,6 +49,8 @@
             <br>
 
             <input type="button" onclick="calculaArea()">Calcular</input>
+
+            <p id="resultadoArea"></p>
 
         </fieldset>
 
@@ -208,9 +212,9 @@
 
 
 
-            <label for="altura">Altura(Em metros):</label>
+            <label for="alturaIMC">Altura(Em metros):</label>
             <br>
-            <input type="number" id="altura">
+            <input type="number" id="alturaIMC">
 
             <br>
 
@@ -224,6 +228,93 @@
 
         </fieldset>
 
+        <fieldset>
+
+            <legend>
+                Verificador de Tringulo
+            </legend>
+
+
+
+            <label for="ladoA">lado A:</label>
+            <br>
+            <input type="number" id="ladoA">
+
+            <br>
+
+            <label for="ladoB">Lado B:</label>
+            <br>
+            <input type="number" id="ladoB">
+
+            <br>
+
+            <label for="ladoC">Lado C:</label>
+            <br>
+            <input type="number" id="ladoC">
+
+            <br>
+
+            <input type="button" onclick="verificadorTriangulo()">enviar</input>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>
+                Idade Atleta
+            </legend>
+
+
+
+            <label for="anoNadador">Ano de nascimento:</label>
+            <br>
+            <input type="date" id="anoNadador">
+
+            <br>
+
+            <label for="anoInscricao">Ano de inscrição:</label>
+            <br>
+            <input type="date" id="anoInscricao">
+
+            <br>
+
+            <input type="button" onclick="nadadorIdade()">enviar</input>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>
+                Verificador de numero
+            </legend>
+
+            <label for="valorA">Valor a ser verificado:</label>
+            <br>
+            <input type="number" id="valorA">
+
+            <br>
+
+            <input type="button" onclick="verificadorNumero()">enviar</input>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>
+                Conversor de temperatura
+            </legend>
+
+            <label for="celcius">Valor em celcius:</label>
+            <br>
+            <input type="number" id="celcius">
+
+            <br>
+
+            <input type="button" onclick="conversorTemperatura()">enviar</input>
+
+            <p id="resultadoTemperatura"></p>
+
+        </fieldset>
     </form>
 </body>
 

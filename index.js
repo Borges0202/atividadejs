@@ -3,7 +3,11 @@ function conversorMoeda() {
 
     let dolar = real * 5;
 
-    document.writeln("Valor em dolar:" + dolar);
+    let resultadoMoeda = "";
+
+    resultadoMoeda = "Valor em dolar:" + dolar.toFixed(2);
+
+    document.getElementById("resultadoMoeda").innerText = resultadoMoeda;
 }
 
 
@@ -11,10 +15,16 @@ function conversorMoeda() {
 function calculaArea() {
 
     let base = document.getElementById("base").value;
+
     let altura = document.getElementById("altura").value;
+
     let area = base * altura;
 
-    document.writeln("Valor da area:" + area);
+    let resultadoArea = "";
+
+    resultadoArea = "Valor da area:" + area.toFixed(2);
+
+    document.getElementById(resultadoArea).innerText = resultadoArea;
 }
 
 function dobroMetade() {
@@ -24,11 +34,21 @@ function dobroMetade() {
 
     let metade = DMbvalor / 2;
 
-    document.writeln("dobro:" + dobro);
-    document.writeln("metade:" + metade);
+    let resultadoDobro = "";
+
+    let resultadoMetade = "";
+
+    letresultadoDobro = "dobro:" + dobro.toFixed(2);
+
+    resultadoMetade = "metade:" + metade.toFixed(2);
+
+    document.getElementById("resultadoDobro").innerText = resultadoDobro;
+
+    document.getElementById("resultadoMetade").innerText = resultadoMetade;
 }
 
 function calculaIdade() {
+
     let anoAtual = new Date(document.getElementById("anoAtual").value);
 
     let anoNascimento = new Date(document.getElementById("anoNascimento").value);
@@ -38,6 +58,8 @@ function calculaIdade() {
     let mesAtual = anoAtual.getMonth();
 
     let mesNascimento = anoNascimento.getMonth();
+
+    let resultadoIdade = "";
 
     if (mesAtual < mesNascimento || mesAtual === mesNascimento && anoAtual.getDate() < anoNascimento.getDate()) {
         idade--;
@@ -52,12 +74,15 @@ function gorgeta() {
 
     let total = conta * 1.10;
 
+    let resultadoGorgeta = "";
+
     document.writeln("Valor final:R$" + total);
 }
 
 function parImpar() {
     let PIvalor = document.getElementById("PIvalor").value;
 
+    let resultadoParImpar = "";
 
     if (PIvalor % 2 !== 0) {
         document.writeln("o numero é Impar");
@@ -78,6 +103,8 @@ function maioridade() {
 
     let mesNascimento = nascimento.getMonth();
 
+    let resultadoMaioridade = "";
+
     if (mesAtual < mesNascimento || mesAtual === mesNascimento && atual.getDate() < nascimento.getDate()) {
         idade--;
         if (idade < 18) {
@@ -94,6 +121,7 @@ function confirmarSenha() {
 
     let senhaCorreta = 1234;
 
+    let resultadoSenha = "";
 
     if (senhaUSR === senhaCorreta) {
         document.writeln("Senha correta");
@@ -107,6 +135,8 @@ function compararNumeros() {
     let numeroA = Number(document.getElementById("numeroA").value);
 
     let numeroB = Number(document.getElementById("numeroB").value);
+
+    let resultadoCompararNumero = "";
 
     if (numeroA > numeroB) {
         document.writeln("Numero A maior")
@@ -122,6 +152,8 @@ function desconto() {
 
     let valorCompra = Number(document.getElementById("valorCompra").value);
 
+    let resultadoDesconto = "";
+
     if (valorCompra > 100) {
         valorCompra = valorCompra * 0.90;
         document.writeln("Total:R$" + valorCompra);
@@ -135,7 +167,14 @@ function calculaIMC() {
 
     let peso = Number(document.getElementById("peso").value);
 
-    let altura = Number(document.getElementById("altura").value);
+    let altura = Number(document.getElementById("alturaIMC").value);
+
+    resultadoIMC = "";
+
+    if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+        document.writeln("Por favor, insira valores válidos para peso e altura.");
+        return;
+    }
 
     let imc = peso / (altura * altura);
 
@@ -155,34 +194,98 @@ function calculaIMC() {
         document.writeln("IMC:" + imc + " - Obesidade severa")
     }
     else {
-        document.writeln("IMC:" + imc + " - Obesidade severa")
+        document.writeln("IMC:" + imc + " - Obesidade mórbida")
     }
 }
-/* case "imc <= 18.5":
-document.writeln("IMC:" + imc + "Magreza")
-break;
 
- case "imc > 18.5 && imc <= 24.9 ":
-document.writeln("IMC:" + imc + "Saudavel")
-break;
 
- case "imc > 24.9 && imc <= 29.9 ":
-document.writeln("IMC:" + imc + "Sobrepeso")
-break;
+function verificadorTriangulo() {
 
- case "imc > 29.9 && imc <= 34.9 ":
-document.writeln("IMC:" + imc + "Obesidade")
-break;
+    resultadoTriangulo = "";
 
- case "imc > 34.9 && imc <= 39.9 ":
-document.writeln("IMC:" + imc + "Obesidade severa")
-break;
+    let ladoA = Number(document.getElementById("ladoA").value);
 
- case "imc => 40":
-document.writeln("IMC:" + imc + "Obesidade Morbida")
-break;
+    let ladoB = Number(document.getElementById("ladoB").value);
 
- default:
-document.writeln("Campos preenchidos de forma incorreta");
-*/
+    let ladoC = Number(document.getElementById("ladoC").value);
+
+    if (ladoA === ladoB && ladoB === ladoC) {
+        document.writeln("equilatero")
+
+    } else if (ladoA !== ladoB && ladoA !== ladoC && ladoB !== ladoC) {
+        document.writeln("escaleto")
+
+    } else {
+        document.writeln("isoceles")
+    }
+
+}
+
+function nadadorIdade() {
+    let anoNadador = new Date(document.getElementById("anoNadador").value);
+
+    let anoInscricao = new Date(document.getElementById("anoInscricao").value);
+
+    let idadeNadador = anoInscricao.getFullYear() - anoNadador.getFullYear();
+
+    let mesNadador = anoNadador.getMonth();
+
+    let mesInscricao = anoInscricao.getMonth();
+
+    resultado = "";
+
+    if (mesInscricao < mesNadador || mesInscricao === mesNadador && anoInscricao.getDate() < anoNadador.getDate()) {
+        idadeNadador--;
+    }
+
+    if (idadeNadador > 4 && idadeNadador < 8) {
+        document.writeln("Infantil A")
+    }
+    else if (idadeNadador > 7 && idadeNadador < 11) {
+        document.writeln("Infantil B")
+    }
+    else if (idadeNadador > 10 && idadeNadador < 18) {
+        document.writeln("Juvenil")
+    }
+    else if (idadeNadador > 17) {
+        document.writeln("Adulto")
+    }
+
+
+}
+
+
+function verificadorNumero() {
+
+    let valorA = Number(document.getElementById("valorA").value);
+
+    if (valorA > 0) {
+        document.writeln("positivo")
+
+    } else if (valorA < 0) {
+        document.writeln("negativo")
+
+    } else {
+        document.writeln("zero")
+    }
+
+}
+
+
+function conversorTemperatura() {
+
+    let celcius = Number(document.getElementById("celcius").value);
+
+    let fahrenheint = (celcius * 1.8) + 32;
+
+    let resultadoTemperatura = "";
+
+    if (fahrenheint > 100) {
+        resultado = fahrenheint.toFixed(2) + "? fahrenheint ta quente em bixo"
+    } else {
+        resultadoTemperatura = fahrenheint.toFixed(2) + "fahrenheint"
+    }
+
+    document.getElementById("resultadoTemperatura").innerText = resultadoTemperatura;
+}
 
