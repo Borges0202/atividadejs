@@ -24,7 +24,7 @@ function calculaArea() {
 
     resultadoArea = "Valor da area:" + area.toFixed(2);
 
-    document.getElementById(resultadoArea).innerText = resultadoArea;
+    document.getElementById("resultadoArea").innerText = resultadoArea;
 }
 
 function dobroMetade() {
@@ -38,7 +38,7 @@ function dobroMetade() {
 
     let resultadoMetade = "";
 
-    letresultadoDobro = "dobro:" + dobro.toFixed(2);
+    resultadoDobro = "dobro:" + dobro.toFixed(2);
 
     resultadoMetade = "metade:" + metade.toFixed(2);
 
@@ -59,14 +59,13 @@ function calculaIdade() {
 
     let mesNascimento = anoNascimento.getMonth();
 
-    let resultadoIdade = "";
-
     if (mesAtual < mesNascimento || mesAtual === mesNascimento && anoAtual.getDate() < anoNascimento.getDate()) {
         idade--;
     }
 
+    let resultadoIdade = "Idade:" + idade;
 
-    document.writeln("Idade:" + idade);
+    document.getElementById("resultadoIdade").innerText = resultadoIdade;
 }
 
 function gorgeta() {
@@ -74,9 +73,9 @@ function gorgeta() {
 
     let total = conta * 1.10;
 
-    let resultadoGorgeta = "";
+    let resultadoGorgeta = "Valor final:R$" + total;
 
-    document.writeln("Valor final:R$" + total);
+    document.getElementById("resultadoGorgeta").innerText = resultadoGorgeta;
 }
 
 function parImpar() {
@@ -85,10 +84,12 @@ function parImpar() {
     let resultadoParImpar = "";
 
     if (PIvalor % 2 !== 0) {
-        document.writeln("o numero é Impar");
+        resultadoParImpar = "o numero é Impar";
     } else {
-        document.writeln("o numero é par")
+        resultadoParImpar = "o numero é par";
     }
+
+    document.getElementById("resultadoParImpar").innerText = resultadoParImpar;
 }
 
 function maioridade() {
@@ -107,12 +108,16 @@ function maioridade() {
 
     if (mesAtual < mesNascimento || mesAtual === mesNascimento && atual.getDate() < nascimento.getDate()) {
         idade--;
-        if (idade < 18) {
-            document.writeln("Você é de menor")
-        }
-    } else {
-        document.writeln("Você é de maior")
     }
+    if (idade < 18) {
+        resultadoMaioridade = "Você é de menor";
+    } else {
+        resultadoMaioridade = "Você é de maior";
+    }
+
+    document.getElementById("resultadoMaioridade").innerText = resultadoMaioridade;
+
+
 }
 
 function confirmarSenha() {
@@ -124,10 +129,12 @@ function confirmarSenha() {
     let resultadoSenha = "";
 
     if (senhaUSR === senhaCorreta) {
-        document.writeln("Senha correta");
+        resultadoSenha = "Senha correta";
     } else {
-        document.writeln("Senha incorreta")
+        resultadoSenha = "Senha incorreta";
     }
+
+    document.getElementById("resultadoSenha").innerText = resultadoSenha;
 }
 
 function compararNumeros() {
@@ -139,12 +146,14 @@ function compararNumeros() {
     let resultadoCompararNumero = "";
 
     if (numeroA > numeroB) {
-        document.writeln("Numero A maior")
+        resultadoCompararNumero = "Numero A maior";
     } else if (numeroA < numeroB) {
-        document.writeln("Numero B maior")
+        resultadoCompararNumero = "Numero B maior";
     } else {
-        document.writeln("Numueros iguais")
+        resultadoCompararNumero = "Numueros iguais";
     }
+
+    document.getElementById("resultadoCompararNumero").innerText = resultadoCompararNumero;
 
 }
 
@@ -156,10 +165,12 @@ function desconto() {
 
     if (valorCompra > 100) {
         valorCompra = valorCompra * 0.90;
-        document.writeln("Total:R$" + valorCompra);
+        resultadoDesconto = "Total:R$" + valorCompra;
     } else {
-        document.writeln("Total:R$" + valorCompra);
+        resultadoDesconto = "Total:R$" + valorCompra;
     }
+
+    document.getElementById("resultadoDesconto").innerText = resultadoDesconto;
 
 }
 
@@ -172,30 +183,32 @@ function calculaIMC() {
     resultadoIMC = "";
 
     if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
-        document.writeln("Por favor, insira valores válidos para peso e altura.");
+        resultadoIMC = "Por favor, insira valores válidos para peso e altura.";
         return;
     }
 
     let imc = peso / (altura * altura);
 
     if (imc <= 18.5) {
-        document.writeln("IMC:" + imc + " - Magreza")
+        resultadoIMC = "IMC:" + imc.toFixed(2) + " - Magreza";
     }
     else if (imc > 18.5 && imc <= 24.9) {
-        document.writeln("IMC:" + imc + " - Saudavel")
+        resultadoIMC = "IMC:" + imc.toFixed(2) + " - Saudavel";
     }
     else if (imc > 24.9 && imc <= 29.9) {
-        document.writeln("IMC:" + imc + " - Sobrepeso")
+        resultadoIMC = "IMC:" + imc.toFixed(2) + " - Sobrepeso";
     }
     else if (imc > 29.9 && imc <= 34.9) {
-        document.writeln("IMC:" + imc + " - Obesidade")
+        resultadoIMC = "IMC:" + imc.toFixed(2) + " - Obesidade";
     }
     else if (imc > 34.9 && imc <= 39.9) {
-        document.writeln("IMC:" + imc + " - Obesidade severa")
+        resultadoIMC = "IMC:" + imc.toFixed(2) + " - Obesidade severa";
     }
     else {
-        document.writeln("IMC:" + imc + " - Obesidade mórbida")
+        resultadoIMC = "IMC:" + imc.toFixed(2) + " - Obesidade mórbida";
     }
+
+    document.getElementById("resultadoIMC").innerText = resultadoIMC;
 }
 
 
@@ -210,14 +223,16 @@ function verificadorTriangulo() {
     let ladoC = Number(document.getElementById("ladoC").value);
 
     if (ladoA === ladoB && ladoB === ladoC) {
-        document.writeln("equilatero")
+        resultadoTriangulo = "equilatero";
 
     } else if (ladoA !== ladoB && ladoA !== ladoC && ladoB !== ladoC) {
-        document.writeln("escaleto")
+        resultadoTriangulo = "escaleno";
 
     } else {
-        document.writeln("isoceles")
+        resultadoTriangulo = "isoceles";
     }
+
+    document.getElementById("resultadoTriangulo").innerText = resultadoTriangulo;
 
 }
 
@@ -232,25 +247,26 @@ function nadadorIdade() {
 
     let mesInscricao = anoInscricao.getMonth();
 
-    resultado = "";
+    resultadoNadador = "";
 
     if (mesInscricao < mesNadador || mesInscricao === mesNadador && anoInscricao.getDate() < anoNadador.getDate()) {
         idadeNadador--;
     }
 
     if (idadeNadador > 4 && idadeNadador < 8) {
-        document.writeln("Infantil A")
+        resultadoNadador = "Infantil A";
     }
     else if (idadeNadador > 7 && idadeNadador < 11) {
-        document.writeln("Infantil B")
+        resultadoNadador = "Infantil B";
     }
     else if (idadeNadador > 10 && idadeNadador < 18) {
-        document.writeln("Juvenil")
+        resultadoNadador = "Juvenil";
     }
     else if (idadeNadador > 17) {
-        document.writeln("Adulto")
+        resultadoNadador = "Adulto";
     }
 
+    document.getElementById("resultadoNadador").innerText = resultadoNadador;
 
 }
 
@@ -259,16 +275,19 @@ function verificadorNumero() {
 
     let valorA = Number(document.getElementById("valorA").value);
 
+    resultadoVerificaNumero = "";
+
     if (valorA > 0) {
-        document.writeln("positivo")
+        resultadoVerificaNumero = "positivo";
 
     } else if (valorA < 0) {
-        document.writeln("negativo")
+        resultadoVerificaNumero = "negativo";
 
     } else {
-        document.writeln("zero")
+        resultadoVerificaNumero = "zero";
     }
 
+    document.getElementById("resultadoVerificaNumero").innerText = resultadoVerificaNumero;
 }
 
 
@@ -281,7 +300,8 @@ function conversorTemperatura() {
     let resultadoTemperatura = "";
 
     if (fahrenheint > 100) {
-        resultado = fahrenheint.toFixed(2) + "? fahrenheint ta quente em bixo"
+        resultadoTemperatura = fahrenheint.toFixed(2) + " fahrenheint? ta quente em bixo"
+        alert("QUENTE");
     } else {
         resultadoTemperatura = fahrenheint.toFixed(2) + "fahrenheint"
     }
